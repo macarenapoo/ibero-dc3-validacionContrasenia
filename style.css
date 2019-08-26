@@ -1,0 +1,112 @@
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 16px;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 54px;
+  color: #6203fc;
+  margin-bottom: 10px;
+}
+
+p {
+  margin: 10px 0;
+  color: #666;
+  line-height: 1.5em;
+}
+
+.container {
+  width: 400px;
+  margin-bottom: 100px;
+}
+
+.formulario {
+  margin: 50px 0;
+}
+
+label {
+  color: #6203fc;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.inputWrapper {
+  display: flex;
+}
+
+input {
+  width: 100%;
+  display: block;
+  margin-bottom: 20px;
+  font-size: 16px;
+  padding: 10px;
+  border: none;
+  border-bottom: solid 1px #DDD;
+  font-weight: 300;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  border-color: #6203fc;
+}
+
+.button {
+  display: block;
+  background-color: #6203fc;
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  width: 100%;
+  padding: 20px;
+  border-radius: 40px;
+  margin: 40px 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.button:focus,
+.button:hover {
+  outline: none;
+  background-color: #4f05c7;
+}
+
+.errores {
+  border-left: solid 5px #f00e3f;
+  color: #f00e3f;
+}
+
+.errores li {
+  margin-bottom: 5px; 
+}
+
+.inputWrapper i {
+  color: #989898;
+  cursor: pointer;
+}
+
+.iconButton {
+  border: none;
+  background: transparent;
+  height: auto;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.iconButton:hover,
+.iconButton:focus {
+  outline: none;
+}
+
+.iconButton:hover i { 
+  color: #4f05c7;
+}
