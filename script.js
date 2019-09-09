@@ -7,24 +7,24 @@ function validarContrasenia() {
   var minuscula = tieneMinuscula(password); // validar si tiene 1 letra minúscula
   var numero = tieneNumero(password); // validar si tiene al menos 1 número
   var caracterEspecial = tieneCaracterEspecial(password); // validar si tiene al menos 1 caracter especial
- 
-  if(!longitud) {
+
+  if (!longitud) {
     errores.push('La contraseña debe tener al menos 8 caracteres');
   }
-  
-  if(!mayuscula) {
+
+  if (!mayuscula) {
     errores.push('La contraseña debe tener al menos 1 letra mayúscula');
   }
 
-  if(!minuscula) {
+  if (!minuscula) {
     errores.push('La contraseña debe tener al menos 1 letra minúscula');
   }
 
-  if(!numero) {
+  if (!numero) {
     errores.push('La contraseña debe tener al menos 1 número');
   }
 
-  if(!caracterEspecial) {
+  if (!caracterEspecial) {
     errores.push('La contraseña debe tener al menos 1 caracter especial');
   }
 
@@ -33,28 +33,28 @@ function validarContrasenia() {
 }
 
 function tieneMayuscula(password) {
-  if(contieneCaracteresEntre(password, 65, 90)) {
+  if (contieneCaracteresEntre(password, 65, 90)) {
     return true;
   }
   return false;
 }
 
 function tieneMinuscula(password) {
-  if(contieneCaracteresEntre(password, 97, 122)) {
+  if (contieneCaracteresEntre(password, 97, 122)) {
     return true;
   }
   return false;
 }
 
 function tieneNumero(password) {
-  if(contieneCaracteresEntre(password, 48, 57)) {
+  if (contieneCaracteresEntre(password, 48, 57)) {
     return true;
   }
   return false;
 }
 
 function tieneCaracterEspecial(password) {
-  if(
+  if (
     contieneCaracteresEntre(password, 33, 47) ||
     contieneCaracteresEntre(password, 58, 64) ||
     contieneCaracteresEntre(password, 91, 96) ||
@@ -66,8 +66,8 @@ function tieneCaracterEspecial(password) {
 }
 
 function contieneCaracteresEntre(string, charCodeStart, charCodeEnd) {
-  for(var i=0; i < string.length; i++) {
-    if(string.charCodeAt(i) >= charCodeStart && string.charCodeAt(i) <= charCodeEnd) {
+  for (var i = 0; i < string.length; i++) {
+    if (string.charCodeAt(i) >= charCodeStart && string.charCodeAt(i) <= charCodeEnd) {
       return true;
     }
   }
@@ -78,10 +78,10 @@ function escribirErrores(errores) {
   var contenedor = document.getElementById('errores');
   contenedor.innerHTML = "";
 
-  errores.forEach(function(error) {
+  errores.forEach(function (error) {
     var li = document.createElement('li');
     li.innerHTML = error;
-    contenedor.appendChild(li); 
+    contenedor.appendChild(li);
   });
 }
 
@@ -99,13 +99,12 @@ function enseniarContrasenia() {
   var icono = document.getElementById('iconoOjo');
   var password = document.getElementById('password');
 
-  if(icono.classList.contains('fa-eye')) {
-    icono.classList.remove('fa-eye');
-    icono.classList.add('fa-eye-slash');
+  if (password.type === "password") {
     password.type = "text";
   } else {
-    icono.classList.remove('fa-eye-slash');
-    icono.classList.add('fa-eye');
     password.type = "password";
   }
+
+  icono.classList.toggle('fa-eye');
+  icono.classList.toggle('fa-eye-slash');
 }
